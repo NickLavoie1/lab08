@@ -21,21 +21,14 @@ CustomItem::~CustomItem(){
 }
 
 std::string CustomItem::composeItem(){
-  std::string res = "Custom Size: " + size + "\n" + "Toppings: " + "\n";
-  std::map<std::string,int>::iterator it;
-  for(it = toppings.begin(); it!=toppings.end(); it++)
-    {
-      res+=it->first;
-      res+=": ";
-      res+=it->second;
-      res+=" oz";
-      res+="\n";
-    }
-  res+="Price: $";
   std::stringstream stream;
   stream << std::fixed << std::setprecision(2) << getPrice();
-  res+=stream.str();
-  res+="\n";
+  std::string res = "Custom Size: " + size + "\n" + "Toppings: " + "\n";
+  for(std::map<std::string, int>::iterator it = toppings.begin(); it!=toppings.end();it++)
+    {
+      res += it->first + ": " + std::to_string(it->second) + " oz " + "\n";
+    }
+  res += "Price: $" + stream.str() + "\n";
   return res;
 }
 
