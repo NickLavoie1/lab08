@@ -6,6 +6,12 @@
 
 PreMadeItem::PreMadeItem(std::string name, std::string size) : IceCreamItem::IceCreamItem(size){
   this->name = name;
+  if(size == "small")
+    price = 4.00;
+  else if(size =="medium")
+    price = 6.00;
+  else
+    price = 7.50;
 }
 
 PreMadeItem::~PreMadeItem(){
