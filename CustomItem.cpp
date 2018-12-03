@@ -26,7 +26,7 @@ std::string CustomItem::composeItem(){
   std::string res = "Custom Size: " + size + "\n" + "Toppings:" + "\n";
   for(std::map<std::string, int>::iterator it = toppings.begin(); it!=toppings.end();it++)
     {
-      res += it->first + ": " + std::to_string(it->second) + " oz " + "\n";
+      res += it->first + ": " + std::to_string(it->second) + " oz" + "\n";
     }
   res += "Price: $" + stream.str() + "\n";
   return res;
