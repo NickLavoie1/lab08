@@ -16,7 +16,7 @@ std::string PreMadeItem::composeItem()
 {
   std::stringstream stream;
   stream << std::fixed << std::setprecision(2) << getPrice();
-  std::string res = "Pre-Made Size: " + size + "\n" + "Pre-made Item: " + name + "\n" + "Price: $" + stream.str() + "\n";
+  std::string res = "Pre-made Size: " + size + "\n" + "Pre-made Item: " + name + "\n" + "Price: $" + stream.str() + "\n";
   return res;
 }
 
